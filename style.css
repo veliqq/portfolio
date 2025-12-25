@@ -15,25 +15,20 @@ html, body {
 }
 
 body {
-    /* Use the background image for the whole page */
     background-image: url('background.png');
-    /* Make the image automatically scale with the viewport while keeping aspect ratio */
-    background-size: cover;           /* always cover the full screen */
-    background-position: center;      /* keep it centered when scaling */
-    background-repeat: no-repeat;     /* no tiling */
-    background-attachment: fixed;     /* keep background tied to viewport, not content height */
-    /* Ensure the body is at least the full viewport height so the image covers it */
+    background-size: cover;           
+    background-position: center;      
+    background-repeat: no-repeat;     
+    background-attachment: fixed;     
     min-height: 100vh;
 
-    /* Hide browser scrollbars but still allow scrolling */
     overflow-y: scroll;
-    -ms-overflow-style: none; /* IE and old Edge */
-    scrollbar-width: none;    /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;    
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Hide scrollbars in WebKit-based browsers (Chrome, Edge, Vivaldi, Safari, etc.) */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     width: 0;
@@ -46,15 +41,12 @@ body::-webkit-scrollbar {
     margin: 16px auto;
 }
 
-/* Inner window area (everything under the title bar) chocolate-themed */
 .window-body {
-    /* Inner window background: plain white instead of cream */
     background-color: #ffffff;
     box-sizing: border-box;
     padding-inline: 8px;
 }
 
-/* Make the title-bar buttons match the chocolate theme instead of default aero */
 .title-bar-controls button {
     border-color: var(--chocolate-dark);
     background-color: var(--cream);
@@ -64,7 +56,6 @@ body::-webkit-scrollbar {
     background-color: var(--chocolate-light);
 }
 
-/* Fade animation for inner tab content on tab change */
 @keyframes tab-fade {
     0% {
         opacity: 0;
@@ -88,23 +79,20 @@ body::-webkit-scrollbar {
 
 .header {
     display: flex;
-    align-items: center; /* Vertically center items in the header */
+    align-items: center; 
     padding: 20px;
     border-bottom: 1px solid var(--border-color);
-    /* No justify-content here, rely on margins for spacing */
 }
 
 .profile-info-container {
     display: flex;
-    flex-direction: column; /* Stack profile picture and location widget vertically */
-    align-items: center; /* Center horizontally within its own column */
-    margin-right: 20px; /* Space from header-text */
-    position: relative; /* For absolute positioning of location text */
-    /* Allow enough width so status text stays on one line */
+    flex-direction: column; 
+    align-items: center; 
+    margin-right: 20px; 
+    position: relative; 
     min-width: 80px;
 }
 
-/* Open-to-work indicator under profile picture */
 .open-to-work-wrapper {
     margin-top: 6px;
 }
@@ -116,7 +104,7 @@ body::-webkit-scrollbar {
     text-decoration: none;
     color: var(--text-color-dark);
     font-size: 0.8rem;
-    white-space: nowrap; /* keep "Open to work" on one line */
+    white-space: nowrap;
 }
 
 .open-to-work-link:hover {
@@ -128,16 +116,16 @@ body::-webkit-scrollbar {
     height: 14px;
     border-radius: 50%;
     display: inline-block;
-    flex-shrink: 0; /* prevent flexbox from squishing the circle */
-    animation: status-blink 2.5s ease-in-out infinite; /* slow blink */
+    flex-shrink: 0;
+    animation: status-blink 2.5s ease-in-out infinite;
 }
 
 .status-open {
-    background-color: #28a745; /* green */
+    background-color: #28a745;
 }
 
 .status-closed {
-    background-color: #dc3545; /* red */
+    background-color: #dc3545;
 }
 
 @keyframes status-blink {
@@ -153,7 +141,7 @@ body::-webkit-scrollbar {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 5px; /* Space between picture and location */
+    margin-bottom: 5px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -162,7 +150,7 @@ body::-webkit-scrollbar {
 }
 
 .header-text {
-    flex-grow: 1; /* Make this element take up available space */
+    flex-grow: 1;
 }
 
 .name-row {
@@ -236,23 +224,22 @@ body::-webkit-scrollbar {
     display: block;
 }
 
-/* Hide default summary marker */
 details > summary::-webkit-details-marker {
     display: none;
 }
 details > summary {
-    list-style: none; /* For Firefox */
+    list-style: none;
 }
 
 .expand-button {
     font-size: 24px;
-    color: var(--chocolate-dark); /* Blend in with header text color */
+    color: var(--chocolate-dark);
     transition: transform 0.3s ease-in-out;
-    cursor: pointer; /* Make it clickable */
-    margin-left: 20px; /* Add some space from the text */
+    cursor: pointer;
+    margin-left: 20px;
 }
 
-.expand-button.is-open { /* Use JS to add this class */
+.expand-button.is-open {
     transform: rotate(45deg);
 }
 
