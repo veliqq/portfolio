@@ -41,11 +41,27 @@ body::-webkit-scrollbar {
 }
 
 .window {
-    width: 900px;
-    margin: 32px auto;
-    background-color: var(--cream);
+    width: 100%;
+    max-width: 900px;
+    margin: 16px auto;
+}
+
+/* Inner window area (everything under the title bar) chocolate-themed */
+.window-body {
+    /* Inner window background: plain white instead of cream */
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding-inline: 8px;
+}
+
+/* Make the title-bar buttons match the chocolate theme instead of default aero */
+.title-bar-controls button {
     border-color: var(--chocolate-dark);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--cream);
+}
+
+.title-bar-controls button:active {
+    background-color: var(--chocolate-light);
 }
 
 /* Fade animation for inner tab content on tab change */
@@ -190,9 +206,6 @@ body::-webkit-scrollbar {
 
 .tabs {
     padding: 10px;
-    transition: height 0.5s ease-in-out;
-    overflow: hidden;
-    height: 0; /* Start collapsed */
 }
 
 .tab-controls {
@@ -282,7 +295,7 @@ details > summary {
 
 #projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding-top: 10px;
 }
@@ -350,4 +363,22 @@ button:active, input[type="button"]:active {
 .skill span {
     font-weight: bold;
     color: var(--text-color-dark);
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .profile-info-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .window {
+        margin: 8px;
+        padding-inline: 8px;
+    }
 }
