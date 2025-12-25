@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Python",
+    "icon": "fab fa-python"
+  },
+  {
+    "name": "Assembly",
+    "icon": "fas fa-microchip"
+  },
+  {
+    "name": "C",
+    "icon": "fas fa-code"
+  },
+  {
+    "name": "Batch",
+    "icon": "fas fa-terminal"
+  },
+  {
+    "name": "MongoDB & SQLite",
+    "icon": "fas fa-database"
+  }
+
+]

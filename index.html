@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veliqq's Resume</title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">cd veliqq_resume && python -m http.server</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="header">
+                <div class="profile-info-container">
+                    <img src="profile.png" alt="Profile Picture" class="profile-picture">
+                </div>
+                <div class="header-text">
+                    <div class="name-row">
+                        <h1>veliqq</h1>
+                        <img src="germany-flag.png" alt="Germany flag" class="flag-icon">
+                    </div>
+                    <p class="age-text">13 years old</p>
+                    <p id="typewriter"></p>
+                </div>
+                <div id="main-expand-button" class="expand-button">[+]</div>
+            </div>
+
+            <details id="main-details">
+                <summary style="display: none;"></summary>
+                <div class="tabs">
+                    <div class="tab-controls">
+                        <button class="tab-button active" data-tab="about">About</button>
+                        <button class="tab-button" data-tab="skills">Skills</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="about">
+                            <div class="content">
+                                <div class="section">
+                                    <h3>Socials</h3>
+                                    <div id="socials-container" class="socials-container"></div>
+                                </div>
+
+                                <div class="section">
+                                    <h3>Experience</h3>
+                                    <p>After getting my first laptop at age 8, I started programming, which started a lifelong passion in computer systems and software development. Before switching to Java and eventually concentrating on Python as my main language, I first learned the fundamentals of programming with Batch. I eventually broadened my skill set to include working with databases like SQLite and MongoDB. Through experimentation and problem-solving, I have independently built all of my technical talents. I can now create Python, C and Assembly programs without issues.</p>
+                                </div>
+
+                                <div class="section">
+                                    <h3>Projects</h3>
+                                    <div id="projects-container"></div>
+                                    <div id="show-more-container">
+                                        <button id="show-more">Show More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="tab-pane" id="skills">
+                        <div id="skills-container"></div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

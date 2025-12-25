@@ -1,0 +1,22 @@
+[
+  {
+    "name": "GitHub",
+    "url": "https://github.com/veliqq",
+    "icon": "fab fa-github"
+  },
+  {
+    "name": "YouTube",
+    "url": "https://www.youtube.com/@velliqq",
+    "icon": "fab fa-youtube"
+  },
+  {
+    "name": "Discord Server",
+    "url": "https://discord.gg/Nu83zVKasU",
+    "icon": "fab fa-discord"
+  },
+  {
+    "name": "Certifications",
+    "url": "https://www.hackerrank.com/profile/veliqq",
+    "icon": "fab fa-hackerrank"
+  }
+]

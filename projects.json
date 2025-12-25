@@ -1,0 +1,23 @@
+
+[
+  {
+    "name": "WhyIsMyPCSlow",
+    "description": "A comprehensive GUI-based diagnostic tool that analyzes your Windows PC's performance and provides actionable insights to improve system speed.",
+    "repo_link": "https://github.com/veliqq/WhyIsMyPCSlow/releases/tag/release-1.0"
+  },
+  {
+    "name": "pytimebudget",
+    "description": "Zero-effort performance regression detection library for Python.",
+    "repo_link": "https://github.com/veliqq/pytimebudget"
+  },
+  {
+    "name": "explipy",
+    "description": "Human-readable Python exception explanations.",
+    "repo_link": "https://github.com/veliqq/explipy"
+  },
+  {
+    "name": "procworld",
+    "description": "Advanced Procedural World Generator library for Python.",
+    "repo_link": "https://github.com/veliqq/procworld"
+  }
+]

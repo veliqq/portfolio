@@ -1,0 +1,353 @@
+:root {
+    --chocolate-dark: #3F2A1D;
+    --chocolate-medium: #6F4E37;
+    --chocolate-light: #A0785A;
+    --cream: #F5F5DC;
+    --accent-color: #D4AF37;
+    --text-color-dark: #3F2A1D;
+    --text-color-light: #F5F5DC;
+    --border-color: #6F4E37;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Use the background image for the whole page */
+    background-image: url('background.png');
+    /* Make the image automatically scale with the viewport while keeping aspect ratio */
+    background-size: cover;           /* always cover the full screen */
+    background-position: center;      /* keep it centered when scaling */
+    background-repeat: no-repeat;     /* no tiling */
+    background-attachment: fixed;     /* keep background tied to viewport, not content height */
+    /* Ensure the body is at least the full viewport height so the image covers it */
+    min-height: 100vh;
+
+    /* Hide browser scrollbars but still allow scrolling */
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and old Edge */
+    scrollbar-width: none;    /* Firefox */
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hide scrollbars in WebKit-based browsers (Chrome, Edge, Vivaldi, Safari, etc.) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.window {
+    width: 900px;
+    margin: 32px auto;
+    background-color: var(--cream);
+    border-color: var(--chocolate-dark);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade animation for inner tab content on tab change */
+@keyframes tab-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-pane.tab-fade {
+    animation: tab-fade 0.25s ease-out;
+}
+
+.title-bar {
+    background: linear-gradient(to right, var(--chocolate-medium), var(--chocolate-light));
+    color: var(--text-color-light);
+    border-bottom: 1px solid var(--chocolate-dark);
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Vertically center items in the header */
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    /* No justify-content here, rely on margins for spacing */
+}
+
+.profile-info-container {
+    display: flex;
+    flex-direction: column; /* Stack profile picture and location widget vertically */
+    align-items: center; /* Center horizontally within its own column */
+    margin-right: 20px; /* Space from header-text */
+    position: relative; /* For absolute positioning of location text */
+    /* Allow enough width so status text stays on one line */
+    min-width: 80px;
+}
+
+/* Open-to-work indicator under profile picture */
+.open-to-work-wrapper {
+    margin-top: 6px;
+}
+
+.open-to-work-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-size: 0.8rem;
+    white-space: nowrap; /* keep "Open to work" on one line */
+}
+
+.open-to-work-link:hover {
+    text-decoration: underline;
+}
+
+.status-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0; /* prevent flexbox from squishing the circle */
+    animation: status-blink 2.5s ease-in-out infinite; /* slow blink */
+}
+
+.status-open {
+    background-color: #28a745; /* green */
+}
+
+.status-closed {
+    background-color: #dc3545; /* red */
+}
+
+@keyframes status-blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 5px; /* Space between picture and location */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
+.header-text {
+    flex-grow: 1; /* Make this element take up available space */
+}
+
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-text h1 {
+    margin: 0;
+    color: var(--chocolate-dark);
+}
+
+.age-text {
+    margin: 2px 0 0;
+    color: var(--chocolate-medium);
+    font-size: 0.95em;
+}
+
+.flag-icon {
+    width: 24px;
+    height: auto;
+    border-radius: 2px;
+}
+
+#typewriter {
+    color: var(--chocolate-medium);
+    font-size: 1.1em;
+    min-height: 1.2em;
+}
+
+.typewriter-cursor {
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.tabs {
+    padding: 10px;
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+    height: 0; /* Start collapsed */
+}
+
+.tab-controls {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    padding: 5px 15px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+    color: var(--chocolate-medium);
+}
+
+.tab-button.active {
+    border-bottom: 2px solid var(--accent-color);
+    font-weight: bold;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Hide default summary marker */
+details > summary::-webkit-details-marker {
+    display: none;
+}
+details > summary {
+    list-style: none; /* For Firefox */
+}
+
+.expand-button {
+    font-size: 24px;
+    color: var(--chocolate-dark); /* Blend in with header text color */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer; /* Make it clickable */
+    margin-left: 20px; /* Add some space from the text */
+}
+
+.expand-button.is-open { /* Use JS to add this class */
+    transform: rotate(45deg);
+}
+
+.content {
+    padding: 0 10px;
+}
+
+.section {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #c0c0c0;
+    background-color: #e0e0e0;
+}
+
+.section h3 {
+    margin-top: 0;
+    color: var(--chocolate-dark);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.socials-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.social-link {
+    margin: 0 15px;
+    font-size: 32px;
+    color: var(--text-color-dark);
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    color: var(--chocolate-medium);
+}
+
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.project {
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project h3 {
+    margin-top: 0;
+    color: var(--chocolate-dark);
+}
+
+#show-more-container {
+    text-align: center;
+    padding: 20px;
+}
+
+button, input[type="button"] {
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+button:active, input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+#skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.skill i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--chocolate-medium);
+}
+
+.skill span {
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
