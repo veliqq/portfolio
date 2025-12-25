@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- TABS ---
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- SOCIALS ---
     fetch('socials.json')
         .then(response => response.json())
         .then(data => {
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-    // --- PROJECTS ---
     let projects = [];
     let projectsToShow = 3;
     let projectsShown = 0;
@@ -88,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showMoreButton.addEventListener('click', renderProjects);
 
-    // --- SKILLS ---
     fetch('skills.json')
         .then(response => response.json())
         .then(data => {
@@ -106,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // --- OPEN-TO-WORK INDICATOR ---
     fetch('status.json')
         .then(response => response.json())
         .then(status => {
